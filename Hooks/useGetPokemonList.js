@@ -2,17 +2,22 @@ import {useReducer, useState} from "react";
 import axios from 'axios'
 import {fetchReducer, fetchReducerInitialState, setError, setLoading, setSuccess} from "../Helpers";
 
+/**
+ * Custom hook to gett ta list of pokemons and function to call the next and prev cursors
+ * @param limit
+ * @param offset
+ * @returns {[S, fetchList, getNext, getPrevious]}
+ */
 export default (limit, offset) => {
 
-    const [ currentUrl, setUrl ] = useState(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
     const [ state, dispatch ] = useReducer(fetchReducer, fetchReducerInitialState);
 
-    const fetchList = async () => {
+    const fetchList = async (nextOrPrev) => {
 
         dispatch(setLoading());
-
         try {
-            const { data } = await axios.get(currentUrl);
+            const { data } = await axios.get(nextOrPrev || url);
             dispatch(setSuccess(data))
         } catch (e) {
             const { message } = e;
@@ -20,27 +25,7 @@ export default (limit, offset) => {
         }
     }
 
-    const getNext = () => {
-        const { data }  = state;
-
-        if(data){
-            const { next } = data;
-            setUrl(next);
-            fetchList();
-        }
-    }
-
-    const getPrevious = () => {
-        const { data }  = state;
-
-        if(data){
-            const { previous } = data;
-            setUrl(previous);
-            fetchList();
-        }
-    }
-
-    return [ state, fetchList, getNext, getPrevious ];
+    return [ state, fetchList ];
 
     
 }
