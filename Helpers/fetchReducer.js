@@ -2,6 +2,12 @@ const SET_LOADING = 'SET_LOADING';
 const SET_ERROR = 'SET_ERROR';
 const SET_SUCCESS = 'SET_DATA';
 
+export const fetchReducerInitialState = {
+    loading: false,
+    error: false,
+    data: false
+}
+
 export const setLoading = () => ({ type: SET_LOADING });
 export const setError = (error) => ({ type: SET_ERROR, payload: error });
 export const setSuccess = (data) => ({ type: SET_SUCCESS, payload: data });
