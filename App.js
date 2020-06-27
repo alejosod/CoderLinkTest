@@ -4,7 +4,15 @@ import { StyleSheet, Text, View } from 'react-native';
 
 const testingEnv = process.env.EXPO_TEST || true
 
-console.log({testingEnv});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
 import StoryApp from './storybook'
 
 function App() {
@@ -18,11 +26,3 @@ function App() {
 
 export default testingEnv ? StoryApp : App
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

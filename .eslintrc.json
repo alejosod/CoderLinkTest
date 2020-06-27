@@ -1,0 +1,9 @@
+{
+    "plugins": ["react", "react-native"],
+    "extends": ["react-native", "plugin:react/recommended"],
+    "rules": {
+        "import/named": 0,
+        "no-undef": 0,
+        "react-native/no-color-literals": 0
+    }
+}

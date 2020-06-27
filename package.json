@@ -5,9 +5,11 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "clean": "rm -rf node_modules && rm package-lock.json"
   },
   "dependencies": {
+    "eslint-config-react-native": "^4.1.0",
     "expo": "~38.0.1",
     "expo-status-bar": "^1.0.0",
     "react": "~16.11.0",
