@@ -1,26 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppLoading } from 'expo';
+import { Container, Text } from 'native-base';
 
-const testingEnv = process.env.EXPO_TEST || true
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const testingEnv = process.env.EXPO_TEST || false
 
 import StoryApp from './storybook'
+import {useFontLoading} from "./Hooks";
 
 function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+  const [ fontLoading ] = useFontLoading();
+
+  return fontLoading ? <AppLoading /> : (
+      <Container>
+        <Text>Open up App.js to start working on your app!</Text>
+      </Container>
   );
 }
 

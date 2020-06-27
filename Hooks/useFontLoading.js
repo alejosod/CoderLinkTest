@@ -8,7 +8,7 @@ import {Ionicons} from "@expo/vector-icons";
  */
 export default () => {
 
-    const [fontLoad, setFontLoad] = useState(false)
+    const [fontLoad, setFontLoad] = useState(true)
 
     useEffect(() => {
         const asyncFontLoad = async () => {
@@ -18,7 +18,7 @@ export default () => {
                 ...Ionicons.font,
             });
 
-            setFontLoad(true)
+            setFontLoad(false)
         }
 
         asyncFontLoad()
