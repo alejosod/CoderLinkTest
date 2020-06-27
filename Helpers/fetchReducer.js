@@ -20,14 +20,14 @@ export default (state, action) => {
             return {
                 loading: true,
                 error: false,
-                success: false
+                data: false
             }
         case SET_ERROR: {
             const { payload } = action;
             return {
                 loading: false,
                 error: payload,
-                success: false,
+                data: false,
             }
         }
         case SET_SUCCESS: {
@@ -35,7 +35,7 @@ export default (state, action) => {
             return {
                 loading: false,
                 error: false,
-                success: payload,
+                data: payload,
             }
         }
         default:
