@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react';
 import { AppLoading } from 'expo';
-import { Container, Text, Button } from 'native-base';
+import { Container } from 'native-base';
 
-const testingEnv = process.env.EXPO_TEST || false
+const testingEnv = process.env.EXPO_TEST || true
 
 import StoryApp from './storybook'
 import {useFontLoading} from "./Hooks";
 import useGetPokemonList from "./Hooks/useGetPokemonList";
+import PokemonListItem from "./Components/PokemonListItem/PokemonListItem";
 
 function App() {
 
@@ -17,10 +18,7 @@ function App() {
 
   return fontLoading || pokemonList.loading ? <AppLoading /> : (
     <Container>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Button onPress={() => {getPokemonList(pokemonList.data.next)}}>
-          <Text>More Pokemons</Text>
-      </Button>
+        <PokemonListItem name={'Pokemon Name'} url={'Test url'} />
     </Container>
   );
 }

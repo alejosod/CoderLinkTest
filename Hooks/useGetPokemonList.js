@@ -1,9 +1,9 @@
-import {useReducer, useState} from "react";
+import {useReducer} from "react";
 import axios from 'axios'
 import {fetchReducer, fetchReducerInitialState, setError, setLoading, setSuccess} from "../Helpers";
 
 /**
- * Custom hook to gett ta list of pokemons and function to call the next and prev cursors
+ * Custom hook to get the list of pokemons and function to call the next and prev cursors
  * @param limit
  * @param offset
  * @returns {[S, fetchList, getNext, getPrevious]}
