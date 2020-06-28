@@ -1,2 +1,3 @@
 import React from 'react';
-import './PokemonListItems.story'
+import './PokemonListItem.story';
+import './PokemonList.story'

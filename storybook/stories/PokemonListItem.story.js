@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 import {Container, Header, Content} from 'native-base'
 import PokemonListItem from "../../Components/PokemonListItem/PokemonListItem";
 
-storiesOf('PokemonLisItems', module)
+storiesOf('PokemonLisItem', module)
     .addDecorator(createStory => (
         <Container>
             <Header />
