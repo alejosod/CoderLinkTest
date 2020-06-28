@@ -3,8 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     listItem: {
         flex: 1,
-        paddingTop: 8,
-        paddingBottom: 8,
+        height: 40,
         backgroundColor: '#fff'
     },
     detailsText: {

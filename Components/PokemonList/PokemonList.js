@@ -1,6 +1,4 @@
 import React from 'react';
-import { View } from 'react-native'
-import { Button, Icon } from "native-base";
 import Proptypes from 'prop-types'
 
 import { SwipeListView } from 'react-native-swipe-list-view';
@@ -8,8 +6,7 @@ import { SwipeListView } from 'react-native-swipe-list-view';
 import PokemonListItem from "../PokemonListItem/PokemonListItem";
 import DetailsButtonComponent from "../DetailsButtonComponent/DetailsButonComponents";
 
-
-const renderItem = (data) => <PokemonListItem {...data} key={data.name}/>
+const renderItem = (data) => <PokemonListItem {...data.item} key={data.item.name}/>
 
 const PokemonList = props => {
     const { pokemonList, navigation } = props;
@@ -19,9 +16,12 @@ const PokemonList = props => {
             data={pokemonList}
             renderItem={renderItem}
             disableLeftSwipe
-            renderHiddenItem={({url}) => ( <DetailsButtonComponent url={url} navigation={navigation}/> )}
+            renderHiddenItem={({ item }) => ( <DetailsButtonComponent url={item.url} navigation={navigation} /> )}
             leftOpenValue={60}
             rightOpenValue={-60}
+            closeOnRowOpen
+            closeOnRowBeginSwipe
+            closeOnRowPress
         />
     )
 }
