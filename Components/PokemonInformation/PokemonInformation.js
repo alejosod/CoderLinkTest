@@ -10,6 +10,8 @@ const PokemonInformation = props => {
 
     const { pokemonInfo } = props;
 
+    console.log({pokemonInfo});
+
     return (
         <Container>
             <Header hasTabs/>

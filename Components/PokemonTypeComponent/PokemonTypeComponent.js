@@ -17,7 +17,7 @@ const PokemonTypeComponent = props => {
 
     return (
         <Card>
-            <CardItem header>
+            <CardItem header bordered>
                 <Text>Pokemon Types</Text>
             </CardItem>
             <CardItem>

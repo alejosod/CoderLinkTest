@@ -16,7 +16,7 @@ const PokemonStatsTab = props => {
 
     return (
         <Card>
-            <CardItem header>
+            <CardItem header bordered>
                 <Text>Pokemon Stats</Text>
             </CardItem>
             <CardItem>

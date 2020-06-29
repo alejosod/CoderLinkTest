@@ -21,7 +21,7 @@ const abilities = [
         }
     ]
 
-storiesOf('PokemonInformation', module)
+storiesOf('PokemonAbillities', module)
     .add('default', () => (
             <PokemonAbilities abilities={abilities} />
         )
