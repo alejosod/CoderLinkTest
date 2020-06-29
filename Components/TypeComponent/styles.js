@@ -7,7 +7,11 @@ export default StyleSheet.create({
         width: 150,
         borderRadius: 12,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 5,
+        marginBottom: 5,
+        marginLeft: 5,
+        marginRight: 5
     },
     text: {
         color: '#fff',
