@@ -12,7 +12,7 @@ const renderBar = ({ base_stat, stat: { name }}) => (
 
 const PokemonStatsTab = props => {
 
-    const { stats } = props;
+    const { stats = [] } = props;
 
     return (
         <Card>

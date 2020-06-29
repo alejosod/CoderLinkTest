@@ -13,7 +13,7 @@ const renderTypes = ({type}) => (
 )
 
 const PokemonTypeComponent = props => {
-    const { types } = props;
+    const { types = [] } = props;
 
     return (
         <Card>
