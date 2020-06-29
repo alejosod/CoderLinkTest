@@ -12,7 +12,7 @@ const DetailsButtonComponent = props => {
         <TouchableHighlight
             activeOpacity={0.6}
             underlayColor="#fff"
-            onPress={() => navigation.navigate(url)}
+            onPress={() => navigation.navigate('Pokemon-Details', {url})}
             style={styles.container}
         >
             <Icon
