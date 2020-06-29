@@ -23,6 +23,12 @@ const pokemonStats = [
             name: 'special-attack'
         }
     },
+    {
+        base_stat: 90,
+        stat: {
+            name: 'super-long-text-testing-wrap'
+        }
+    },
 ]
 
 storiesOf('PokemonStatsTab', module)

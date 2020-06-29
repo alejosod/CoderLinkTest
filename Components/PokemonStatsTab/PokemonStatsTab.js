@@ -1,14 +1,13 @@
 import React from 'react';
 import Proptypes from 'prop-types'
-import {  View } from 'react-native'
-import { Card, CardItem, Text, Body } from 'native-base';
+import { Card, CardItem, Text, Body, ListItem, List } from 'native-base';
 
 import BarComponent from "../BarComponent";
 
 const renderBar = ({ base_stat, stat: { name }}) => (
-    <View style={{backgroundColor: '#000', width: 50, position: 'relative'}}>
+    <ListItem >
         <BarComponent name={name}  value={base_stat} />
-    </View>
+    </ListItem>
     )
 
 const PokemonStatsTab = props => {
@@ -21,8 +20,10 @@ const PokemonStatsTab = props => {
                 <Text>Pokemon Stats</Text>
             </CardItem>
             <CardItem>
-                <Body style={{ height: 150, display: 'flex', flexDirection: 'row'}}>
-                    {stats.map(renderBar)}
+                <Body >
+                    <List>
+                        {stats.map(renderBar)}
+                    </List>
                 </Body>
             </CardItem>
         </Card>
