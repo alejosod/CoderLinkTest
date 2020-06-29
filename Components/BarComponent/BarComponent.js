@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, Text } from 'react-native'
 import styles from './styles'
 
-const getBarValue = (value) => 100-value
+const getBarValue = (value) => value * 2
 
 const BarComponent = props => {
     const { name, value } = props;
@@ -12,7 +12,7 @@ const BarComponent = props => {
         <View style={styles.container}>
             <View>
                 <View style={styles.backgroundBar} />
-                <View style={{...styles.barValue, height: getBarValue(value)}} />
+                <View style={{...styles.barValue, width: getBarValue(value)}} />
             </View>
             <Text style={styles.text}>{name}</Text>
         </View>
